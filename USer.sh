@@ -1,18 +1,14 @@
-  
 #!/bin/bash +x
 
-echo "-----Email Pattern-----"
+echo "----Mobile Validation----"
 shopt -s extglob
+read -p "Enter mobile no: " no
 
-#valid Format: abc.xyz@bridgelabz.co
+val='^(91){1}[ ]+[0-9]{10}$'
 
-format='^[a-zA-Z0-9]+(.[a-zA-Z0-9])*(\@)[a-zA-Z0-9]+(\.)([a-z]{2,4})+([.][a-z]{2})*$'
-
-read -p "Enter Email Id: " email
-
-if [[ $email =~ $foramt ]]
+if [[ $no =~ $val ]]
 then
-	echo "$email   IS VALID EMAIL."
+	echo "$no  is valid Name."
 else
-	echo "$email    is Invalid Email-Id ???"
+	echo "$no  is invalid pls Enter correct name"
 fi
