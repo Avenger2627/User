@@ -1,13 +1,18 @@
+  
 #!/bin/bash +x
-echo "----Last Name Validation----"
+
+echo "-----Email Pattern-----"
 shopt -s extglob
-read -p "Enter Last Name: " name
 
-val='^([A-Z]{1})+[a-z]{2,}$'
+#valid Format: abc.xyz@bridgelabz.co
 
-if [[ $name =~ $val ]]
+format='^[a-zA-Z0-9]+(.[a-zA-Z0-9])*(\@)[a-zA-Z0-9]+(\.)([a-z]{2,4})+([.][a-z]{2})*$'
+
+read -p "Enter Email Id: " email
+
+if [[ $email =~ $foramt ]]
 then
-	echo "$name  is valid Name."
+	echo "$email   IS VALID EMAIL."
 else
-	echo "$name  is invalid pls Enter correct name"
+	echo "$email    is Invalid Email-Id ???"
 fi
