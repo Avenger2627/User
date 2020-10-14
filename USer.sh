@@ -1,14 +1,13 @@
 #!/bin/bash +x
-
-echo "----Mobile Validation----"
+echo "----Password Validation----"
 shopt -s extglob
-read -p "Enter mobile no: " no
+read -p "Enter Password: " pass
 
-val='^(91){1}[ ]+[0-9]{10}$'
+val='^[[A-Z]{1}+[A-Za-z0-9]{7,}$'
 
-if [[ $no =~ $val ]]
+if [[ $pass =~ $val ]]
 then
-	echo "$no  is valid Name."
+	echo "$pass  is Strong password."
 else
-	echo "$no  is invalid pls Enter correct name"
+	echo "$pass  is invalid pls Enter One Uppercase & minimum 8 character"
 fi
